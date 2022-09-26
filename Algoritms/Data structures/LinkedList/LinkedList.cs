@@ -92,6 +92,24 @@ namespace Algoritms.Data_structures.LinkedList
             return false;
         }
 
+        public void Revert()
+        {
+            NodeOne<T> current = _head;
+            NodeOne<T> next = null;
+            NodeOne<T> previos = null;
+
+            while(current != null)
+            {
+                next = current.NextNode;
+                current.NextNode = previos;
+                previos = current;
+                current = next;
+            }
+            previos = _tail;
+            _tail = _head;
+            _head = previos;
+        }
+
         public bool Contains(T data)
         {
             NodeOne<T> current = _head;

@@ -10,25 +10,47 @@ namespace Algoritms.Data_structures.LinkedList
     {
         public static void Program()
         {
-            LinkedListMy<string> names = new LinkedListMy<string>();
-            Console.WriteLine(names.IsEmpty);
-            names.Add("Bob");
-            names.Add("Nik");
-            names.Add("Rick");
+            #region LinkedList
+            //LinkedListMy<string> names = new LinkedListMy<string>();
+            //Console.WriteLine(names.IsEmpty);
+            //names.Add("Bob");
+            //names.Add("Nik");
+            //names.Add("Rick");
 
-            foreach (var item in names)
+            //foreach (var item in names)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.ReadKey();
+            //Console.WriteLine(names.Count);
+            //names.Revert();
+            //Console.WriteLine(names.Count);
+            //foreach (var item in names)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.ReadKey();
+            #endregion
+
+            #region DoublyLinkedList
+            DoublyLinkedList<string> names2 = new DoublyLinkedList<string>();
+            names2.AddFirst("Bob");
+            names2.Add("Nik");
+            names2.Add("Rick");
+            Console.WriteLine(names2.Count);
+
+            foreach (var item in names2)
             {
                 Console.WriteLine(item);
             }
-            Console.ReadKey();
-            Console.WriteLine(names.Count);
-            names.Remove("Nik");
-            Console.WriteLine(names.Count);
-            foreach (var item in names)
+
+            names2.AddFirst("Kate");
+
+            foreach (var item in names2)
             {
                 Console.WriteLine(item);
             }
-            Console.ReadKey();
+            #endregion
         }
     }
 }
