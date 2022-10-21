@@ -114,5 +114,25 @@ namespace Algoritms.Data_structures.LinkedList
         {
             return ((IEnumerable)this).GetEnumerator();
         }
+
+
+        public void Reverse()
+        {
+            NodeTwo<T> current = _head;
+            NodeTwo<T> next = null;
+            NodeTwo<T> previos = null;
+
+            while (current != null)
+            {
+                next = current.NextNode;
+                current.NextNode = previos;
+                previos = current;
+                current = next;
+            }
+
+            previos = _tail;
+            _tail = _head;
+            _head = previos;
+        }
     }
 }

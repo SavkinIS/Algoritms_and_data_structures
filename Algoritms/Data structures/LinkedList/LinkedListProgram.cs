@@ -44,8 +44,18 @@ namespace Algoritms.Data_structures.LinkedList
                 Console.WriteLine(item);
             }
 
+            Console.WriteLine();
+
             names2.AddFirst("Kate");
 
+            foreach (var item in names2)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            names2.Reverse();
             foreach (var item in names2)
             {
                 Console.WriteLine(item);
